@@ -26,9 +26,9 @@ class LoginFragment : Fragment() {
         bottomNavigationVisibility() // Hide bottom navigation view
 
 
-        binding.login.setOnClickListener {
-            navController.navigate(R.id.action_loginFragment_to_homeFragment)
-        }
+        //binding.login.setOnClickListener {
+          //  navController.navigate(R.id.action_loginFragment_to_homeFragment)
+        //}
 
 
         return binding.root
@@ -41,6 +41,8 @@ class LoginFragment : Fragment() {
         val bottomView = requireActivity().findViewById<View>(R.id.bottomNavigationView)
         bottomView.visibility = View.GONE
     }
+
+
 
 
 

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#000000"
+    tools:context=".fragments.LoginFragment">
+
+    <LinearLayout
+        android:id="@+id/Name"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Moviz"
+            android:textColor="#F6C845"
+            android:textSize="55sp"
+            android:layout_gravity="right"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A+"
+            android:textColor="#800000"
+            android:textSize="55sp"
+            android:textStyle="bold"
+
+            />
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/Name"
+        android:layout_marginTop="80dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxStrokeColor="@color/white"
+        app:boxStrokeWidth="0dp"
+        android:hint="@string/userNameHint"
+        app:hintTextColor="@color/white"
+        app:boxBackgroundColor="#F6C845"
+        android:layout_marginHorizontal="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:inputType="text"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/username"
+        android:layout_marginTop="25dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxBackgroundColor="#F6C845"
+        app:boxStrokeColor="@color/white"
+        app:boxStrokeWidth="0dp"
+        android:layout_marginHorizontal="20dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:textColorHint="#F6C845"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        app:cardBackgroundColor="#B7B9A8"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        android:layout_marginTop="40dp"
+        app:cardCornerRadius="10dp"
+        android:clickable="true"
+        app:strokeWidth="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="70dp"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/loginText"
+            android:layout_width="match_parent"
+            android:text="Login"
+            android:layout_gravity="center"
+            android:textColor="#0C0D0D"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="35sp"
+            android:layout_height="wrap_content"/>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login" />
+
+    <LinearLayout
+        android:id="@+id/socials"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/line"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/google_icon"
+            android:layout_margin="20dp"
+            />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/facebook_icon"
+            android:layout_margin="20dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/signUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/socials"
+        android:text="Don't have an account? Sign up"
+        android:textColor="#F6C845"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

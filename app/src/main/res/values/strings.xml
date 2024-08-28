@@ -3,4 +3,17 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="userNameHint">Username</string>
+    <string name="signIn_t">Sign in</string>
+    <string name="email_t">E-mail or Phone Number</string>
+    <string name="password_t">Password</string>
+    <string name="signInImgDescription">Sign in logo</string>
+    <string name="signIn_B">Sign in</string>
+    <string name="forgetPass_t"><u>Forget password ?</u></string>
+    <string name="noAccount_t">Have no account ?</string>
+    <string name="signUp_t">Sign up</string>
+    <string name="name_t">Name</string>
+    <string name="email2_t">E-mail</string>
+    <string name="phone_t">phone number</string>
+    <string name="confirmPassword_t">Confirm Password </string>
+    <string name="haveAccount_t">Have an account ?</string>
 </resources>

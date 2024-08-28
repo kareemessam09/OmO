@@ -18,19 +18,33 @@ class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         val navController = findNavController()
 
-        val bottomView = requireActivity().findViewById<View>(R.id.bottomNavigationView)
-        bottomView.visibility = View.GONE
+        bottomNavgationVisibility() // Hide bottom navigation view
+
 
         binding.login.setOnClickListener {
             navController.navigate(R.id.action_loginFragment_to_homeFragment)
         }
 
+
         return binding.root
     }
+
+
+
+    // Hide bottom navigation view
+    private fun bottomNavgationVisibility() {
+        val bottomView = requireActivity().findViewById<View>(R.id.bottomNavigationView)
+        bottomView.visibility = View.GONE
+    }
+
+
+
+
+
 
 }

@@ -61,7 +61,7 @@
         android:textColor="@color/c2"/>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/getStartet_b"
+        android:id="@+id/getStartet_btn"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginHorizontal="18dp"

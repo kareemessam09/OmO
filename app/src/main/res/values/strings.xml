@@ -17,4 +17,9 @@
     <string name="confirmPassword_t">Confirm Password </string>
     <string name="haveAccount_t">Have an account ?</string>
     <string name="continueWith_t">Continue with</string>
+    <string name="signUpImgDescription">sign up portrait</string>
+    <string name="startStatement">"JOIN THE PARTY WITH "</string>
+    <string name="omo">OmO !</string>
+    <string name="description_t">Get ready for an epic movie adventure ! Your cinematic journey starts now!</string>
+    <string name="getStarted_t">Let\'s Go</string>
 </resources>

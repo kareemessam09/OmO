@@ -26,9 +26,10 @@ class LoginFragment : Fragment() {
         bottomNavigationVisibility() // Hide bottom navigation view
 
 
-        //binding.login.setOnClickListener {
-          //  navController.navigate(R.id.action_loginFragment_to_homeFragment)
-        //}
+        binding.signInB.setOnClickListener {
+            navController.navigate(R.id.action_loginFragment_to_homeFragment)
+        }
+
 
 
         return binding.root

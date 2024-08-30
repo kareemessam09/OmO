@@ -3,4 +3,7 @@
     <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="android:textColorHint">@color/c1</item>
     </style>
+    <style name="CustomTextInputLayout2" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:textColorHint">@color/a1</item>
+    </style>
 </resources>

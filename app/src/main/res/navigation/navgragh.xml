@@ -41,4 +41,9 @@
             app:popUpTo="@id/startFragment"
             app:popUpToInclusive="true"/>
     </fragment>
+    <fragment
+        android:id="@+id/meFragment"
+        android:name="com.kotlinexample.moviesapp.fragments.MeFragment"
+        android:label="fragment_me"
+        tools:layout="@layout/fragment_me" />
 </navigation>

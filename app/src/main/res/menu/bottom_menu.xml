@@ -12,6 +12,11 @@
         android:icon="@drawable/baseline_category_24"
         android:title="Categories" />
 
+    <item
+        android:id="@+id/meFragment"
+        android:icon="@drawable/profile_ic"
+        android:title="Me" />
+
 
 
 

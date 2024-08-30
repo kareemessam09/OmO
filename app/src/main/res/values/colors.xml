@@ -25,4 +25,8 @@
     <color name="a2">#99627A</color>
     <color name="a3">#C88EA7</color>
     <color name="a4">#E7CBCB</color>
+
+    <color name="colorPrimaryDark">#303F9F</color> <!-- Darker version of primary color -->
+    <color name="colorAccent">#FF4081</color> <!-- Accent color used for highlights -->
+
 </resources>

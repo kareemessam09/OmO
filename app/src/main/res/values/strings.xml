@@ -22,4 +22,7 @@
     <string name="omo">OmO !</string>
     <string name="description_t">Get ready for an epic movie adventure ! Your cinematic journey starts now!</string>
     <string name="getStarted_t">Let\'s Go</string>
+
+    <string name="see_all"><u>see all</u></string>
+
 </resources>

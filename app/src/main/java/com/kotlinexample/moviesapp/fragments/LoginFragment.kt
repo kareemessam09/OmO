@@ -31,6 +31,7 @@ class LoginFragment : Fragment() {
         }
 
 
+
         return binding.root
     }
 
@@ -41,6 +42,8 @@ class LoginFragment : Fragment() {
         val bottomView = requireActivity().findViewById<View>(R.id.bottomNavigationView)
         bottomView.visibility = View.GONE
     }
+
+
 
 
 

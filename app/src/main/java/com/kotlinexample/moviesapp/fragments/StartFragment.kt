@@ -24,7 +24,7 @@ class StartFragment : Fragment() {
 
 
         binding.getStartetBtn.setOnClickListener {
-            navController.navigate(R.id.action_startFragment_to_loginFragment)
+            navController.navigate(R.id.action_startFragment_to_homeFragment)
         }
 
 

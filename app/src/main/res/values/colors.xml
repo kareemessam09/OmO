@@ -17,15 +17,17 @@
     <color name="c4">#53331F</color>
     <color name="c5">#E0CECE</color>
     <color name="c6">#D7818E</color>
+    <color name="c7">#2A1A10</color>
     <color name="b1">#E17888</color>
     <color name="b2">#FFD2CCCC</color>
     <color name="b3">#1C5789</color>
     <color name="b4">#341514</color>
+    <color name="b5">#1A0A0A</color>
     <color name="a1">#643843</color>
     <color name="a2">#99627A</color>
     <color name="a3">#C88EA7</color>
     <color name="a4">#E7CBCB</color>
-
+    <color name="red">#FF0000</color>
     <color name="colorPrimaryDark">#303F9F</color> <!-- Darker version of primary color -->
     <color name="colorAccent">#FF4081</color> <!-- Accent color used for highlights -->
 

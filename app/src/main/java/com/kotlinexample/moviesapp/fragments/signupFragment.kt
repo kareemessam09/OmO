@@ -21,19 +21,20 @@ class signupFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSignupBinding.inflate(inflater, container, false)
-        initViews()
-        listeners()
+        val navController = findNavController()
+
+
+        binding.signUpB.setOnClickListener {
+            navController.navigate(R.id.action_signUpFragment_to_startFragment)
+        }
+        binding.haveAccountLayout.setOnClickListener {
+            navController.navigate(R.id.action_signUpFragment_to_loginFragment)
+        }
 
         return binding.root
     }
 
-    private fun listeners() {
-        TODO("Not yet implemented")
-    }
 
-    private fun initViews() {
-
-    }
 
 
 

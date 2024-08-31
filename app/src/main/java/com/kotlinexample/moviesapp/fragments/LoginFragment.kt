@@ -29,6 +29,9 @@ class LoginFragment : Fragment() {
         binding.signInB.setOnClickListener {
             navController.navigate(R.id.action_loginFragment_to_homeFragment)
         }
+        binding.signuptrans.setOnClickListener{
+            navController.navigate(R.id.action_loginFragment_to_signUpFragment)
+        }
 
 
 

@@ -24,5 +24,11 @@
     <string name="getStarted_t">Let\'s Go</string>
 
     <string name="see_all"><u>see all</u></string>
+    <string name="myAccount_t"><b>My Account</b></string>
+    <string name="username_t">Username</string>
+    <string name="sleepMode_t">Sleep Mode</string>
+    <string name="editProfile_t">Edit Profile</string>
+    <string name="theme_t">Theme</string>
+    <string name="logOut_t">Log Out</string>
 
 </resources>

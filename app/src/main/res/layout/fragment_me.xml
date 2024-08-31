@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/c7"
+    android:background="@color/b5"
     tools:context=".fragments.MeFragment">
 
     <Toolbar

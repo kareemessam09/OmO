@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.kotlinexample.moviesapp.data.SharedPrefrenc
 import com.kotlinexample.moviesapp.databinding.ActivityMainBinding
 import com.kotlinexample.moviesapp.databinding.FragmentLoginBinding
 
@@ -23,13 +24,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+        initViews()
+
+
+    }
+
+    private fun initViews() {
         val fragment = supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
         val navController = fragment.navController
-
         binding.bottomNavigationView.setupWithNavController(navController)
 
-        // Hide the bottom navigation bar when the user is on the login screen
-
+        SharedPrefrenc.initalize(applicationContext)
     }
 
 

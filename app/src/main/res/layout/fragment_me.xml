@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/b5"
+    android:background="@color/c7"
     tools:context=".fragments.MeFragment">
 
     <Toolbar
@@ -36,14 +36,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/username_t"
-        android:textColor="@color/a4"
+        android:textColor="@color/white"
         android:textSize="40sp"
         android:fontFamily="@font/savelemon"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/user_photo"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="14dp" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/edit_profile"
@@ -52,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@id/user_name"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="40dp"
-        app:cardBackgroundColor="@color/b4"
+        app:cardBackgroundColor="@color/c8"
         app:cardCornerRadius="8dp"
         android:clickable="true"
         android:focusable="true" >
@@ -71,8 +71,8 @@
             android:layout_marginStart="70dp"
             android:fontFamily="@font/monawriter"
             android:text="@string/editProfile_t"
-            android:textColor="@color/a4"
-            android:textSize="20sp"
+            android:textColor="@color/b5"
+            android:textSize="21sp"
             android:textStyle="bold" />
     </com.google.android.material.card.MaterialCardView>
 
@@ -83,7 +83,7 @@
         app:layout_constraintTop_toBottomOf="@id/edit_profile"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="15dp"
-        app:cardBackgroundColor="@color/b4"
+        app:cardBackgroundColor="@color/c8"
         app:cardCornerRadius="8dp"
         android:clickable="true"
         android:focusable="true" >
@@ -102,8 +102,8 @@
             android:layout_marginStart="70dp"
             android:fontFamily="@font/monawriter"
             android:text="@string/sleepMode_t"
-            android:textColor="@color/a4"
-            android:textSize="20sp"
+            android:textColor="@color/b5"
+            android:textSize="21sp"
             android:textStyle="bold" />
     </com.google.android.material.card.MaterialCardView>
 
@@ -114,7 +114,7 @@
         app:layout_constraintTop_toBottomOf="@id/sleepMode"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="15dp"
-        app:cardBackgroundColor="@color/b4"
+        app:cardBackgroundColor="@color/c8"
         app:cardCornerRadius="8dp"
         android:clickable="true"
         android:focusable="true" >
@@ -133,8 +133,8 @@
             android:layout_marginStart="70dp"
             android:fontFamily="@font/monawriter"
             android:text="@string/theme_t"
-            android:textColor="@color/a4"
-            android:textSize="20sp"
+            android:textColor="@color/b5"
+            android:textSize="21sp"
             android:textStyle="bold" />
     </com.google.android.material.card.MaterialCardView>
 
@@ -145,7 +145,7 @@
         app:layout_constraintTop_toBottomOf="@id/theme"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="15dp"
-        app:cardBackgroundColor="@color/b4"
+        app:cardBackgroundColor="@color/c8"
         app:cardCornerRadius="8dp"
         android:clickable="true"
         android:focusable="true" >

@@ -1,60 +1,84 @@
 package com.kotlinexample.moviesapp.fragments
 
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.widget.SearchView
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.kotlinexample.moviesapp.R
+import com.kotlinexample.moviesapp.adapters.CategoryAdapter
+import com.kotlinexample.moviesapp.databinding.FragmentCategoryBinding
+import com.kotlinexample.moviesapp.models.CategoryData
+import java.util.Locale
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [CategoryFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CategoryFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentCategoryBinding
+    private var categoryList = ArrayList<CategoryData>()
+    private lateinit var adapter: CategoryAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_category, container, false)
-    }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CategoryFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CategoryFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        binding = FragmentCategoryBinding.inflate(inflater, container, false)
+        val navController = findNavController()
+
+        binding.categoryRecyclerView.setHasFixedSize(true)
+        binding.categoryRecyclerView.layoutManager= LinearLayoutManager (requireContext())
+
+        addDataToList()
+        adapter = CategoryAdapter(categoryList)
+        binding.categoryRecyclerView.adapter= adapter
+
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                filterList(newText)
+                return true
+            }
+
+        })
+
+        return binding.root
+    }
+    private fun filterList(query: String?) {
+
+            if (query != null) {
+                val filteredList = ArrayList<CategoryData>()
+                for (i in categoryList) {
+                    if (i.categoryTitle.lowercase(Locale.ROOT).contains(query)) {
+                        filteredList.add(i)
+                    }
+                }
+
+                if (filteredList.isEmpty()) {
+                    Toast.makeText(requireContext(), "No Data found", Toast.LENGTH_SHORT).show()
+                } else {
+                    adapter.setFilteredList(filteredList)
                 }
             }
+        }
+    private fun addDataToList() {
+        categoryList.add(CategoryData("Action", R.drawable.ic_ninja))
+        categoryList.add(CategoryData("Romance", R.drawable.ic_romance))
+        categoryList.add(CategoryData("Fantasy", R.drawable.ic_fantasy))
+        categoryList.add(CategoryData("Horror", R.drawable.ic_horror))
+        categoryList.add(CategoryData("Sci-Fi", R.drawable.ic_scifi))
+        categoryList.add(CategoryData("Adventure", R.drawable.ic_adventure))
+        categoryList.add(CategoryData("Comedy", R.drawable.ic_comedy))
+        categoryList.add(CategoryData("Drama", R.drawable.ic_drama))
+
     }
+
 }

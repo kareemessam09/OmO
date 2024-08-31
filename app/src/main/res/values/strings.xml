@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">moviesApp</string>
+    <string name="app_name">OmO</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="userNameHint">Username</string>
@@ -30,5 +30,6 @@
     <string name="editProfile_t">Edit Profile</string>
     <string name="theme_t">Theme</string>
     <string name="logOut_t">Log Out</string>
+    <string name="category1">ACTION</string>
 
 </resources>

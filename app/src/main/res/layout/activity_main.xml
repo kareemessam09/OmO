@@ -15,11 +15,17 @@
         app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
         android:layout_height="match_parent" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:id="@+id/bottomNavigationView"
+        android:layout_width="400dp"
+        android:layout_height="80dp"
+        android:background="@color/b2"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="10dp"
+        app:cnb_menuResource="@menu/bottom_menu"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bottom_menu"
-        android:layout_height="wrap_content"/>
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

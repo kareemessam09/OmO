@@ -11,6 +11,7 @@
     </style>
 
     <style name="Theme.MoviesApp." parent="Base.Theme.MoviesApp" />
+
     <style name="Theme.MoviesApp.SplashScreen" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground"> @color/c7</item>
         <item name="windowSplashScreenAnimatedIcon"> @drawable/ic_splashscreen</item>

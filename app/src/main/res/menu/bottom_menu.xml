@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home"
-        android:title="Home" />
+        android:title="Home"
+        app:cnb_iconColor="@color/b3"
+        />
 
     <item
         android:id="@+id/categoryFragment"
         android:icon="@drawable/baseline_category_24"
-        android:title="Categories" />
+        android:title="Categories"
+        app:cnb_iconColor="@color/b1"
+        />
 
     <item
         android:id="@+id/meFragment"
         android:icon="@drawable/profile_ic"
-        android:title="Me" />
+        android:title="Me"
+        app:cnb_iconColor="@color/b4"
+        />
 
 
 

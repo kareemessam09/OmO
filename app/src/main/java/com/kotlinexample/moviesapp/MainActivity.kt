@@ -32,10 +32,31 @@ class MainActivity : AppCompatActivity() {
     private fun initViews() {
         val fragment = supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
         val navController = fragment.navController
-        binding.bottomNavigationView.setupWithNavController(navController)
 
-        SharedPrefrenc.initalize(applicationContext)
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item) {
+                R.id.homeFragment -> {
+                    navController.navigate(R.id.homeFragment)
+                    true
+                }
+
+                R.id.categoryFragment -> {
+                    navController.navigate(R.id.categoryFragment)
+                    true
+                }
+
+                R.id.meFragment -> {
+                    navController.navigate(R.id.meFragment)
+                    true
+                }
+
+                else -> false
+
+            }
+
+            SharedPrefrenc.initalize(applicationContext)
+        }
+
+
     }
-
-
 }

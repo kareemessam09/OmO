@@ -31,5 +31,7 @@
     <string name="theme_t">Theme</string>
     <string name="logOut_t">Log Out</string>
     <string name="category1">ACTION</string>
+    <string name="storyset">Storyset</string>
+    <string name="watchNow">Watch Now</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.kotlinexample.moviesapp.data
+package com.kotlinexample.moviesapp.data.local
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -16,7 +16,7 @@ object SharedPrefrenc {
 
         @SuppressLint("StaticFieldLeak")
         fun initalize(context: Context){
-            this.context = context
+            SharedPrefrenc.context = context
         }
 
         fun setLoginState(state: Boolean) {

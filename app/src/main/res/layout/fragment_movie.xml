@@ -1,14 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.MovieFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:paddingBottom="80dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".fragments.MovieFragment">
+
+            <ImageView
+                android:id="@+id/movie_backdrop"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@color/babyblue"/>
+
+            <LinearLayout
+                android:id="@+id/movieDetailLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/movie_backdrop">
+                <ImageView
+                    android:id="@+id/movie_poster"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/image_place_holder"/>
+                <LinearLayout
+                    android:id="@+id/movieDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="20dp">
+
+                    <TextView
+                        android:id="@+id/movie_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="24sp"
+                        android:text="School of bad"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"/>
+                    <RatingBar
+                        android:id="@+id/movie_rating"
+                        android:layout_marginTop="15dp"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_marginStart="20dp"/>
+                    <TextView
+                        android:id="@+id/id.movie_release_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray1"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="15dp"
+                        android:text="1444"/>
+                    <TextView
+                        android:id="@+id/id.movie_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Comedy"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/movieStoryset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/movieDetailLayout"
+                app:layout_constraintStart_toStartOf="@+id/movieDetailLayout"
+                android:layout_marginTop="17dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/storyset"
+                android:layout_marginStart="15dp"/>
+            <TextView
+                android:id="@+id/movie_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/movieStoryset"
+                app:layout_constraintStart_toStartOf="@+id/movieStoryset"
+                android:layout_marginTop="17dp"
+                android:layout_marginHorizontal="15dp"
+                android:textColor="@color/black"
+                android:text="dddddddddddddsssssssddddddddddddddddddddd"
+                android:textSize="17sp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/watchNowB"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="28dp"
+                app:cardBackgroundColor="@color/blue"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/movie_overview"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/sonomedium"
+                    android:text="@string/watchNow"
+                    android:textColor="@color/white"
+                    android:textSize="23sp"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </TableLayout>
+</ScrollView>

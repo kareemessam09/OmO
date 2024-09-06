@@ -4,10 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
-import com.kotlinexample.moviesapp.data.SharedPrefrenc
+import com.kotlinexample.moviesapp.data.local.SharedPrefrenc
 import com.kotlinexample.moviesapp.databinding.ActivityMainBinding
-import com.kotlinexample.moviesapp.databinding.FragmentLoginBinding
 
 class MainActivity : AppCompatActivity() {
 

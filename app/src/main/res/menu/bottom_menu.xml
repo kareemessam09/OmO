@@ -7,7 +7,7 @@
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home"
         android:title="Home"
-        app:cnb_iconColor="@color/b3"
+        app:cnb_iconColor="@color/blue"
         />
 
     <item
@@ -21,7 +21,7 @@
         android:id="@+id/meFragment"
         android:icon="@drawable/profile_ic"
         android:title="Me"
-        app:cnb_iconColor="@color/b4"
+        app:cnb_iconColor="@color/purple"
         />
 
 

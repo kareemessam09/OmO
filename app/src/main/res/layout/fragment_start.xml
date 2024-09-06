@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.StartFragment"
-    android:background="@color/b4">
+    android:background="@color/b5">
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/startGif"

@@ -3,8 +3,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-
-
     <ImageView
         android:id="@+id/poster_image"
         android:layout_width="380dp"

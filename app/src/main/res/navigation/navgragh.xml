@@ -28,7 +28,12 @@
         android:id="@+id/homeFragment"
         android:name="com.kotlinexample.moviesapp.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/categoryFragment"
@@ -53,6 +58,7 @@
         android:name="com.kotlinexample.moviesapp.fragments.MeFragment"
         android:label="fragment_me"
         tools:layout="@layout/fragment_me" />
+
     <fragment
         android:id="@+id/signupFragment"
         android:name="com.kotlinexample.moviesapp.fragments.signupFragment"
@@ -70,4 +76,19 @@
             app:popUpToInclusive="true"
             />
     </fragment>
+
+
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.kotlinexample.moviesapp.fragments.MovieFragment"
+        android:label="MovieFragment">
+
+        <argument
+            android:name="movie"
+            app:argType="com.kotlinexample.moviesapp.models.Movie" />
+
+
+    </fragment>
+
 </navigation>

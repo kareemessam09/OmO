@@ -5,9 +5,10 @@
 
     <ImageView
         android:id="@+id/poster_image"
-        android:layout_width="380dp"
+        android:layout_width="410dp"
         android:layout_height="280dp"
-        android:scaleType="centerCrop"
+        android:scaleY="1"
+        android:scaleX="2"
         android:adjustViewBounds="true"
         android:elevation="4dp"
         android:src="@drawable/image_place_holder"

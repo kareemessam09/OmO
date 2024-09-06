@@ -5,11 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearSnapHelper
 import com.kotlinexample.moviesapp.R
 import com.kotlinexample.moviesapp.adapters.CascadingItemDecoration
 import com.kotlinexample.moviesapp.adapters.HomeMoviesAdapter
 import com.kotlinexample.moviesapp.adapters.TrendedMoviesAdapter
+import com.kotlinexample.moviesapp.data.repository.MoviesRepository
 import com.kotlinexample.moviesapp.databinding.FragmentHomeBinding
 import com.kotlinexample.moviesapp.models.TrendMovies
 
@@ -37,21 +39,16 @@ class HomeFragment : Fragment() {
         fillComingSoonRecycler() //fill coming soon recycler view
 
 
-
-
         return binding.root
     }
 
     private fun fillComingSoonRecycler() {
-        val ll = mutableListOf(
-            TrendMovies("https://image.tmdb.org/t/p/w500/6Wdl9N6dL0Hi0T1qJLWSz6gMLbd.jpg"),
-            TrendMovies("https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg"),
-            TrendMovies("https://image.tmdb.org/t/p/w500/q719jXXEzOoYaps6babgKnONONX.jpg"),
-            TrendMovies("https://image.tmdb.org/t/p/w500/2CAL2433ZeIihfX1Hb2139CX0pW.jpg"),
-            TrendMovies("https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg")
-        )
 
-        binding.comingRecyclerView.adapter = TrendedMoviesAdapter(ll,requireContext()) // Adapter for Trended movies
+        val comingSoon = MoviesRepository.getUpcomingMovies(1, onSuccess = {
+            binding.comingRecyclerView.adapter = TrendedMoviesAdapter(it,requireContext()) // Adapter for Trended movies
+        }, onError = {
+            Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
+        })
 
         binding.comingRecyclerView.layoutManager = CascadingItemDecoration(requireContext())
 
@@ -59,16 +56,16 @@ class HomeFragment : Fragment() {
         snapHelper.attachToRecyclerView(binding.comingRecyclerView)
     }
 
-    private fun fillHighRatedRecycler() {
-        val ll = mutableListOf(
-            TrendMovies("https://image.tmdb.org/t/p/w500/6Wdl9N6dL0Hi0T1qJLWSz6gMLbd.jpg"),
-            TrendMovies("https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg"),
-            TrendMovies("https://image.tmdb.org/t/p/w500/q719jXXEzOoYaps6babgKnONONX.jpg"),
-            TrendMovies("https://image.tmdb.org/t/p/w500/2CAL2433ZeIihfX1Hb2139CX0pW.jpg"),
-            TrendMovies("https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg")
-        )
 
-        binding.highRatedRecyclerView.adapter = TrendedMoviesAdapter(ll,requireContext()) // Adapter for Trended movies
+
+
+    private fun fillHighRatedRecycler() {
+
+    val topRated = MoviesRepository.getTopRatedMovies(1, onSuccess = {
+            binding.highRatedRecyclerView.adapter = TrendedMoviesAdapter(it,requireContext()) // Adapter for Trended movies
+        }, onError = {
+            Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
+        })
 
         binding.highRatedRecyclerView.layoutManager = CascadingItemDecoration(requireContext())
 
@@ -77,16 +74,16 @@ class HomeFragment : Fragment() {
     }
 
 
-    private fun fillHomeRecycler() {
-        val ll = mutableListOf(
-            TrendMovies("https://image.tmdb.org/t/p/w500/6Wdl9N6dL0Hi0T1qJLWSz6gMLbd.jpg"),
-            TrendMovies("https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg"),
-            TrendMovies("https://image.tmdb.org/t/p/w500/q719jXXEzOoYaps6babgKnONONX.jpg"),
-            TrendMovies("https://image.tmdb.org/t/p/w500/2CAL2433ZeIihfX1Hb2139CX0pW.jpg"),
-            TrendMovies("https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg")
-        )
 
-        binding.homerecycler.adapter = HomeMoviesAdapter(ll,requireContext()) // Adapter for Trended movies
+
+
+    private fun fillHomeRecycler() {
+
+        val home = MoviesRepository.getNowPlayingMovies(1, onSuccess = {
+            binding.homerecycler.adapter = HomeMoviesAdapter(it,requireContext()) // Adapter for Trended movies
+        }, onError = {
+            Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
+        })
 
         binding.homerecycler.layoutManager = CascadingItemDecoration(requireContext())
 
@@ -94,20 +91,17 @@ class HomeFragment : Fragment() {
         snapHelper.attachToRecyclerView(binding.trendedRecyclerView)
 
 
-
-
     }
 
-    private fun fillTrendRecycler() {
-        val ll = mutableListOf(
-            TrendMovies("https://image.tmdb.org/t/p/w500/6Wdl9N6dL0Hi0T1qJLWSz6gMLbd.jpg"),
-            TrendMovies("https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg"),
-            TrendMovies("https://image.tmdb.org/t/p/w500/q719jXXEzOoYaps6babgKnONONX.jpg"),
-            TrendMovies("https://image.tmdb.org/t/p/w500/2CAL2433ZeIihfX1Hb2139CX0pW.jpg"),
-            TrendMovies("https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg")
-        )
 
-        binding.trendedRecyclerView.adapter = TrendedMoviesAdapter(ll,requireContext()) // Adapter for Trended movies
+
+    private fun fillTrendRecycler() {
+
+        val popular = MoviesRepository.getPopularMovies(1, onSuccess = {
+            binding.trendedRecyclerView.adapter = TrendedMoviesAdapter(it,requireContext()) // Adapter for Trended movies
+        }, onError = {
+            Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
+        })
 
         binding.trendedRecyclerView.layoutManager = CascadingItemDecoration(requireContext())
 

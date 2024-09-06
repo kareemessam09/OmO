@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     private fun initViews() {
         val fragment = supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
         val navController = fragment.navController
-
+        binding.bottomNavigationView.setItemSelected(R.id.homeFragment)
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item) {
                 R.id.homeFragment -> {
@@ -51,6 +51,9 @@ class MainActivity : AppCompatActivity() {
                 else -> false
 
             }
+
+
+
 
             SharedPrefrenc.initalize(applicationContext)
         }

@@ -3,12 +3,15 @@ package com.kotlinexample.moviesapp.adapters
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.kotlinexample.moviesapp.databinding.MovieTrendItemBinding
+import com.kotlinexample.moviesapp.fragments.HomeFragmentDirections
+import com.kotlinexample.moviesapp.models.Movie
 import com.kotlinexample.moviesapp.models.TrendMovies
 
-class TrendedMoviesAdapter(private val moviePosters: List<TrendMovies>,private val context: Context) : RecyclerView.Adapter<MovieViewHolder>() {
+class TrendedMoviesAdapter(private val moviePosters: List<Movie>,private val context: Context) : RecyclerView.Adapter<MovieViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val v = MovieTrendItemBinding.inflate(LayoutInflater.from(context), parent, false)
@@ -19,8 +22,13 @@ class TrendedMoviesAdapter(private val moviePosters: List<TrendMovies>,private v
 
 
         Glide.with(holder.itemView.context)
-            .load(moviePosters[position].poster)
+            .load("https://image.tmdb.org/t/p/w342${moviePosters[position].posterPath}")
             .into(holder.moviePoster)
+
+        holder.itemView.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToMovieFragment(moviePosters[position])
+            it.findNavController().navigate(action)
+        }
 
         val layoutParams = holder.itemView.layoutParams as RecyclerView.LayoutParams
         layoutParams.marginEnd = 8

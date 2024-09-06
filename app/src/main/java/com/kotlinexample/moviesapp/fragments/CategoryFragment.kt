@@ -38,6 +38,9 @@ class CategoryFragment : Fragment() {
         adapter = CategoryAdapter(categoryList)
         binding.categoryRecyclerView.adapter= adapter
 
+
+
+
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false

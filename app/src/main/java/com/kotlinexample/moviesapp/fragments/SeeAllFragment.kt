@@ -9,18 +9,17 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kotlinexample.moviesapp.R
 import com.kotlinexample.moviesapp.adapters.SeeAllAdapter
-import com.kotlinexample.moviesapp.adapters.TrendedMoviesAdapter
 import com.kotlinexample.moviesapp.data.repository.MoviesRepository
 import com.kotlinexample.moviesapp.databinding.FragmentSeeAllTrendedBinding
 
 class SeeAllFragment : Fragment() {
 
-    lateinit var binding: FragmentSeeAllTrendedBinding
+    private lateinit var binding: FragmentSeeAllTrendedBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSeeAllTrendedBinding.inflate(inflater, container, false)
 
         binding.back.setOnClickListener {

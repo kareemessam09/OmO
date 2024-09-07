@@ -22,17 +22,6 @@ import kotlinx.coroutines.launch
 class TrendedMoviesAdapter(private val moviePosters: List<Movie>,private val context: Context) : RecyclerView.Adapter<MovieViewHolder>() {
 
 
-    fun Movie.toMovieRoom(): MoviesRoom {
-        return MoviesRoom(
-            id = this.id,
-            title = this.title,
-            overview = this.overview,
-            posterPath = this.posterPath,
-            backdropPath = this.backdropPath,
-            rating = this.rating,
-            releaseDate = this.releaseDate
-        )
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val v = MovieTrendItemBinding.inflate(LayoutInflater.from(context), parent, false)

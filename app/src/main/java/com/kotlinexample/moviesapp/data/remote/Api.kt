@@ -29,4 +29,32 @@ interface Api {
         @Query("api_key") apiKey: String = "c0159f039b157d30f17a9c31ed17794f",
         @Query("page") page: Int
     ): Call<GetMoviesResponse>
+
+    @GET("tv/top_rated")
+    fun getTopRatedTvShows(
+        @Query("api_key") apiKey : String = "c0159f039b157d30f17a9c31ed17794f",
+        @Query("page") page: Int
+    ): Call<GetTvResponse>
+
+    @GET("tv/popular")
+    fun getPopularTvShows(
+        @Query("api_key") apiKey : String = "c0159f039b157d30f17a9c31ed17794f",
+        @Query("page") page: Int
+    ): Call<GetTvResponse>
+
+    @GET("tv/on_the_air")
+    fun getOnTheAirTvShows(
+        @Query("api_key") apiKey : String = "c0159f039b157d30f17a9c31ed17794f",
+        @Query("page") page: Int
+    ): Call<GetTvResponse>
+
+    @GET("tv/airing_today")
+    fun getAiringTodayTvShows(
+        @Query("api_key") apiKey : String = "c0159f039b157d30f17a9c31ed17794f",
+        @Query("page") page: Int
+    ): Call<GetTvResponse>
+
+
+
+
 }

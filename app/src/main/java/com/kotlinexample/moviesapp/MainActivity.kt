@@ -38,8 +38,8 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
 
-                R.id.categoryFragment -> {
-                    navController.navigate(R.id.categoryFragment)
+                R.id.tvFragment -> {
+                    navController.navigate(R.id.tvFragment)
                     true
                 }
 

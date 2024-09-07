@@ -5,15 +5,15 @@
 
     <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/ic_home"
-        android:title="Home"
+        android:icon="@drawable/movie_ic"
+        android:title="Movies"
         app:cnb_iconColor="@color/blue"
         />
 
     <item
-        android:id="@+id/categoryFragment"
-        android:icon="@drawable/baseline_category_24"
-        android:title="Categories"
+        android:id="@+id/tvFragment"
+        android:icon="@drawable/baseline_tv_24"
+        android:title="TV"
         app:cnb_iconColor="@color/b1"
         />
 

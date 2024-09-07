@@ -39,12 +39,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/categoryFragment"
-        android:name="com.kotlinexample.moviesapp.fragments.CategoryFragment"
-        android:label="fragment_category"
-        tools:layout="@layout/fragment_category" />
-
-    <fragment
         android:id="@+id/startFragment"
         android:name="com.kotlinexample.moviesapp.fragments.StartFragment"
         android:label="fragment_start"
@@ -105,5 +99,9 @@
             android:name="movieType"
             app:argType="string"/>
     </fragment>
+    <fragment
+        android:id="@+id/tvFragment"
+        android:name="com.kotlinexample.moviesapp.fragments.TvFragment"
+        android:label="TvFragment" />
 
 </navigation>

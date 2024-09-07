@@ -32,6 +32,9 @@
         <action
             android:id="@+id/action_homeFragment_to_movieFragment"
             app:destination="@id/movieFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_seeAllFragment"
+            app:destination="@id/seeAllFragment" />
 
     </fragment>
 
@@ -89,6 +92,18 @@
             app:argType="com.kotlinexample.moviesapp.models.Movie" />
 
 
+    </fragment>
+    <fragment
+        android:id="@+id/seeAllFragment"
+        android:name="com.kotlinexample.moviesapp.fragments.SeeAllFragment"
+        android:label="fragment_see_all_trended"
+        tools:layout="@layout/fragment_see_all_trended" >
+        <action
+            android:id="@+id/action_seeAllFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+        <argument
+            android:name="movieType"
+            app:argType="string"/>
     </fragment>
 
 </navigation>

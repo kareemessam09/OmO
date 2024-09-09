@@ -7,20 +7,25 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
 import com.kotlinexample.moviesapp.R
+import com.kotlinexample.moviesapp.adapters.CascadingItemDecoration
+import com.kotlinexample.moviesapp.adapters.HomeTvAdapter
 import com.kotlinexample.moviesapp.adapters.SeeAllAdapter
+import com.kotlinexample.moviesapp.adapters.SeeAllShowsAdapter
+import com.kotlinexample.moviesapp.adapters.TvAdapter
 import com.kotlinexample.moviesapp.data.repository.MoviesRepository
-import com.kotlinexample.moviesapp.databinding.FragmentSeeAllTrendedBinding
+import com.kotlinexample.moviesapp.data.repository.TvRepository
+import com.kotlinexample.moviesapp.databinding.FragmentSeeAllShowsBinding
 
-class SeeAllFragment : Fragment() {
 
-    private lateinit var binding: FragmentSeeAllTrendedBinding
-
+class SeeAllShowsFragment : Fragment() {
+    lateinit var binding: FragmentSeeAllShowsBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSeeAllTrendedBinding.inflate(inflater, container, false)
+        binding = FragmentSeeAllShowsBinding.inflate(inflater,container,false)
 
         binding.back.setOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed() // Back button
@@ -30,32 +35,29 @@ class SeeAllFragment : Fragment() {
         binding.toolbarTitle.text = head
 
         when(head){
-            "trended" -> {
+            "Popular Now" -> {
                 fillTrendRecycler()
             }
-            "highRated" -> {
-               fillHighRatedRecycler()
+            "High Rated" -> {
+                fillHighRatedRecycler()
             }
-            "comingSoon" -> {
+            "On Air" -> {
                 fillComingSoonRecycler()
             }
         }
 
-        bottomNavigationVisibility() // Hide bottom navigation view
+        bottomNavigationVisibility()
+
 
         return binding.root
     }
 
 
-    private fun bottomNavigationVisibility() {
-        val bottomView = requireActivity().findViewById<View>(R.id.bottomNavigationView)
-        bottomView.visibility = View.GONE
-    }
 
     private fun fillTrendRecycler() {
 
-        val trended = MoviesRepository.getPopularMovies(1, onSuccess = {
-            binding.SeeAllRecyclerView.adapter = SeeAllAdapter(it,requireContext()) // Adapter for Trended movies
+        val popular = TvRepository.getPopularTvShows(3, onSuccess = {
+            binding.SeeAllRecyclerView.adapter = SeeAllShowsAdapter(it,requireContext()) // Adapter for Trended movies
             binding.SeeAllRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         }, onError = {
             Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
@@ -65,8 +67,8 @@ class SeeAllFragment : Fragment() {
 
     private fun fillHighRatedRecycler() {
 
-        val trended = MoviesRepository.getTopRatedMovies(1, onSuccess = {
-            binding.SeeAllRecyclerView.adapter = SeeAllAdapter(it,requireContext()) // Adapter for Trended movies
+        val topRated = TvRepository.getTopRatedTvShows(1, onSuccess = {
+            binding.SeeAllRecyclerView.adapter = SeeAllShowsAdapter(it,requireContext())
             binding.SeeAllRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         }, onError = {
             Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
@@ -76,13 +78,17 @@ class SeeAllFragment : Fragment() {
 
     private fun fillComingSoonRecycler() {
 
-        val coming = MoviesRepository.getUpcomingMovies(2, onSuccess = {
-            binding.SeeAllRecyclerView.adapter = SeeAllAdapter(it,requireContext()) // Adapter for Trended movies
+        val onAir = TvRepository.getOnTheAirTvShows(1, onSuccess = {
+            binding.SeeAllRecyclerView.adapter = SeeAllShowsAdapter(it,requireContext())
             binding.SeeAllRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         }, onError = {
             Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
         })
+    }
 
+    private fun bottomNavigationVisibility() {
+        val bottomView = requireActivity().findViewById<View>(R.id.bottomNavigationView)
+        bottomView.visibility = View.GONE
     }
 
 }

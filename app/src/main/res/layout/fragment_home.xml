@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:scrollbarStyle="insideOverlay"
     android:scrollbars="vertical"
-    android:background="@color/b2"
+    android:background="@color/black"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.HomeFragment">
 
@@ -18,7 +18,7 @@
          <RelativeLayout
              android:id="@+id/showLayout"
              android:layout_width="match_parent"
-             android:layout_height="280dp"
+             android:layout_height="wrap_content"
              app:layout_constraintTop_toTopOf="parent"
              android:layout_marginTop="5dp"
              >
@@ -54,7 +54,7 @@
              android:layout_height="wrap_content"
              app:layout_constraintTop_toBottomOf="@id/showLayout"
              android:orientation="horizontal"
-             android:layout_marginTop="10dp"
+             android:layout_marginTop="15dp"
              >
 
              <TextView
@@ -64,6 +64,7 @@
                  android:text="Trending now:"
                  android:textSize="20sp"
                  android:textStyle="bold"
+                 android:textColor="#407BFE"
                  />
 
              <View
@@ -78,6 +79,7 @@
                  android:text="@string/see_all"
                  android:textSize="20sp"
                  android:textStyle="bold"
+                 android:textColor="#407BFE"
                  android:layout_marginRight="10dp"
                  android:layout_gravity="end"/>
 
@@ -88,7 +90,7 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              app:layout_constraintTop_toBottomOf="@id/trendedLayout"
-             android:layout_marginTop="10dp"
+             android:layout_marginTop="15dp"
              android:orientation="horizontal"
              tools:listitem="@layout/movie_trend_item"
              app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -113,6 +115,8 @@
                  android:text="High Rated:"
                  android:textSize="20sp"
                  android:textStyle="bold"
+                 android:textColor="#407BFE"
+
                  />
 
              <View
@@ -127,6 +131,7 @@
                  android:text="@string/see_all"
                  android:textSize="20sp"
                  android:textStyle="bold"
+                 android:textColor="#407BFE"
                  android:layout_marginRight="10dp"
                  android:layout_gravity="end"/>
 
@@ -139,6 +144,8 @@
              app:layout_constraintTop_toBottomOf="@id/highrating"
              android:orientation="horizontal"
              tools:listitem="@layout/movie_trend_item"
+             android:layout_marginTop="15dp"
+
 
              />
 
@@ -158,6 +165,8 @@
                  android:text="Comming Soon:"
                  android:textSize="20sp"
                  android:textStyle="bold"
+                 android:textColor="#407BFE"
+
                  />
 
              <View
@@ -173,6 +182,8 @@
                  android:textSize="20sp"
                  android:textStyle="bold"
                  android:layout_marginRight="10dp"
+                 android:textColor="#407BFE"
+
                  android:layout_gravity="end"/>
 
          </LinearLayout>
@@ -184,6 +195,8 @@
              app:layout_constraintTop_toBottomOf="@id/coming"
              android:orientation="horizontal"
              tools:listitem="@layout/movie_trend_item"
+             android:layout_marginTop="15dp"
+
 
              />
 

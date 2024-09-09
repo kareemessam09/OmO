@@ -53,10 +53,10 @@ class MainActivity : AppCompatActivity() {
             }
 
 
-
-
-            SharedPrefrenc.initalize(applicationContext)
         }
+
+        SharedPrefrenc.initalize(applicationContext)
+
 
 
     }

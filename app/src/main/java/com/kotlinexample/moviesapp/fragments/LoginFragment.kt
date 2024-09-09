@@ -1,12 +1,15 @@
 package com.kotlinexample.moviesapp.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.ui.graphics.ShaderBrush
 import androidx.navigation.fragment.findNavController
 import com.kotlinexample.moviesapp.R
+import com.kotlinexample.moviesapp.data.local.SharedPrefrenc
 import com.kotlinexample.moviesapp.databinding.FragmentLoginBinding
 
 
@@ -26,7 +29,9 @@ class LoginFragment : Fragment() {
         bottomNavigationVisibility() // Hide bottom navigation view
 
 
+
         binding.signInB.setOnClickListener {
+            SharedPrefrenc.setLoginState(true)
             navController.navigate(R.id.action_loginFragment_to_homeFragment)
         }
         binding.signuptrans.setOnClickListener{

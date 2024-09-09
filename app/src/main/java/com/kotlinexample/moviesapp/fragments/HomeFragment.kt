@@ -86,7 +86,7 @@ class HomeFragment : Fragment() {
 
     private fun fillHomeRecycler() {
 
-        val home = MoviesRepository.getNowPlayingMovies(1, onSuccess = {
+        val home = MoviesRepository.getNowPlayingMovies(3, onSuccess = {
             binding.homerecycler.adapter = HomeMoviesAdapter(it,requireContext()) // Adapter for Trended movies
         }, onError = {
             Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
@@ -126,7 +126,7 @@ class HomeFragment : Fragment() {
 //            val moviesList = room.getMovies().map { it.toMovie() }
 //            binding.comingRecyclerView.adapter =
 //                TrendedMoviesAdapter(moviesList, requireContext()) // Adapter for Trended movies
-                val comingSoon = MoviesRepository.getUpcomingMovies(1, onSuccess = {
+                val comingSoon = MoviesRepository.getUpcomingMovies(2, onSuccess = {
                     binding.comingRecyclerView.adapter = TrendedMoviesAdapter(it,requireContext()) // Adapter for Trended movies
                 }, onError = {
                     Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()

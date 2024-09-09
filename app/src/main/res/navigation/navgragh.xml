@@ -99,9 +99,22 @@
             android:name="movieType"
             app:argType="string"/>
     </fragment>
+
     <fragment
         android:id="@+id/tvFragment"
         android:name="com.kotlinexample.moviesapp.fragments.TvFragment"
-        android:label="TvFragment" />
+        android:label="TvFragment" >
+        <action
+            android:id="@+id/action_tv_to_see_all"
+            app:destination="@id/seeAllShowsFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/seeAllShowsFragment"
+        android:name="com.kotlinexample.moviesapp.fragments.SeeAllShowsFragment"
+        android:label="SeeAllShowsFragment" >
+        <argument
+            android:name="movieType"
+            app:argType="string"/>
+    </fragment>
 
 </navigation>

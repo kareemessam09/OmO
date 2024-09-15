@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kotlinexample.moviesapp.R
 import com.kotlinexample.moviesapp.adapters.SeeAllAdapter
 import com.kotlinexample.moviesapp.data.repository.MoviesRepository
 import com.kotlinexample.moviesapp.databinding.FragmentSeeAllTrendedBinding
+import kotlinx.coroutines.launch
 
 class SeeAllFragment : Fragment() {
 
@@ -29,17 +31,15 @@ class SeeAllFragment : Fragment() {
         val head = arguments?.getString("movieType")
         binding.toolbarTitle.text = head
 
-        when(head){
-            "trended" -> {
-                fillTrendRecycler()
-            }
-            "highRated" -> {
-               fillHighRatedRecycler()
-            }
-            "comingSoon" -> {
-                fillComingSoonRecycler()
-            }
-        }
+        binding.progressBar.visibility = View.VISIBLE
+
+        lifecycleScope.launch {
+           when (head) {
+               "trended" -> fillTrendRecycler()
+               "highRated" -> fillHighRatedRecycler()
+               "comingSoon" -> fillComingSoonRecycler()
+           }
+       }
 
         bottomNavigationVisibility() // Hide bottom navigation view
 
@@ -52,9 +52,10 @@ class SeeAllFragment : Fragment() {
         bottomView.visibility = View.GONE
     }
 
-    private fun fillTrendRecycler() {
+    private suspend fun fillTrendRecycler() {
 
-        val trended = MoviesRepository.getPopularMovies(1, onSuccess = {
+        MoviesRepository.getPopularMovies(1, onSuccess = {
+            binding.progressBar.visibility = View.GONE
             binding.SeeAllRecyclerView.adapter = SeeAllAdapter(it,requireContext()) // Adapter for Trended movies
             binding.SeeAllRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         }, onError = {
@@ -63,9 +64,11 @@ class SeeAllFragment : Fragment() {
 
     }
 
-    private fun fillHighRatedRecycler() {
+    private suspend fun fillHighRatedRecycler() {
 
-        val trended = MoviesRepository.getTopRatedMovies(1, onSuccess = {
+        MoviesRepository.getPopularMovies(1, onSuccess = {
+            binding.progressBar.visibility = View.GONE
+
             binding.SeeAllRecyclerView.adapter = SeeAllAdapter(it,requireContext()) // Adapter for Trended movies
             binding.SeeAllRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         }, onError = {
@@ -74,9 +77,11 @@ class SeeAllFragment : Fragment() {
 
     }
 
-    private fun fillComingSoonRecycler() {
+    private suspend fun fillComingSoonRecycler() {
 
-        val coming = MoviesRepository.getUpcomingMovies(2, onSuccess = {
+        MoviesRepository.getUpcomingMovies(2, onSuccess = {
+            binding.progressBar.visibility = View.GONE
+
             binding.SeeAllRecyclerView.adapter = SeeAllAdapter(it,requireContext()) // Adapter for Trended movies
             binding.SeeAllRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         }, onError = {

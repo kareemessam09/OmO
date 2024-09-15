@@ -1,6 +1,8 @@
 package com.kotlinexample.moviesapp.data.remote
 
+import com.kotlinexample.moviesapp.models.Movie
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -17,6 +19,7 @@ interface Api {
         @Query("api_key") apiKey: String = "c0159f039b157d30f17a9c31ed17794f",
         @Query("page") page: Int
     ): Call<GetMoviesResponse>
+
 
     @GET("movie/upcoming")
     fun getUpcomingMovies(

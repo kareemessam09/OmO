@@ -34,6 +34,8 @@ class SeeAllShowsFragment : Fragment() {
         val head = arguments?.getString("movieType")
         binding.toolbarTitle.text = head
 
+        binding.progressBar.visibility = View.VISIBLE
+
         when(head){
             "Popular Now" -> {
                 fillTrendRecycler()
@@ -57,6 +59,7 @@ class SeeAllShowsFragment : Fragment() {
     private fun fillTrendRecycler() {
 
         val popular = TvRepository.getPopularTvShows(3, onSuccess = {
+            binding.progressBar.visibility = View.GONE
             binding.SeeAllRecyclerView.adapter = SeeAllShowsAdapter(it,requireContext()) // Adapter for Trended movies
             binding.SeeAllRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         }, onError = {
@@ -68,6 +71,8 @@ class SeeAllShowsFragment : Fragment() {
     private fun fillHighRatedRecycler() {
 
         val topRated = TvRepository.getTopRatedTvShows(1, onSuccess = {
+            binding.progressBar.visibility = View.GONE
+
             binding.SeeAllRecyclerView.adapter = SeeAllShowsAdapter(it,requireContext())
             binding.SeeAllRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         }, onError = {
@@ -79,6 +84,8 @@ class SeeAllShowsFragment : Fragment() {
     private fun fillComingSoonRecycler() {
 
         val onAir = TvRepository.getOnTheAirTvShows(1, onSuccess = {
+            binding.progressBar.visibility = View.GONE
+
             binding.SeeAllRecyclerView.adapter = SeeAllShowsAdapter(it,requireContext())
             binding.SeeAllRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         }, onError = {

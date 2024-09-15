@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-kapt'
 }
@@ -55,7 +56,7 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     //firebase
-    implementation platform('com.google.firebase:firebase-bom:33.2.0')
+    implementation platform('com.google.firebase:firebase-bom:33.3.0')
     implementation 'com.google.firebase:firebase-analytics'
     //firebase auth
     implementation 'com.firebaseui:firebase-ui-auth:8.0.2'
@@ -70,7 +71,6 @@ dependencies {
 
     //Parcelize
     implementation "org.jetbrains.kotlin:kotlin-parcelize-runtime:1.5.10"
-
 
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")

@@ -1,11 +1,13 @@
 package com.kotlinexample.moviesapp.adapters
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.lifecycle.MutableLiveData
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -19,7 +21,7 @@ import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class TrendedMoviesAdapter(private val moviePosters: List<Movie>,private val context: Context) : RecyclerView.Adapter<MovieViewHolder>() {
+class TrendedMoviesAdapter(private var moviePosters: List<Movie>, private val context: Context) : RecyclerView.Adapter<MovieViewHolder>() {
 
 
 

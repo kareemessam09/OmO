@@ -54,7 +54,14 @@
         android:id="@+id/meFragment"
         android:name="com.kotlinexample.moviesapp.fragments.MeFragment"
         android:label="fragment_me"
-        tools:layout="@layout/fragment_me" />
+        tools:layout="@layout/fragment_me" >
+        <action
+            android:id="@+id/action_meFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/meFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
 
     <fragment
         android:id="@+id/signupFragment"
@@ -107,14 +114,32 @@
         <action
             android:id="@+id/action_tv_to_see_all"
             app:destination="@id/seeAllShowsFragment"/>
+        <action
+            android:id="@+id/action_tv_to_tvv"
+            app:destination="@id/tvvFragment"/>
+
     </fragment>
+
     <fragment
         android:id="@+id/seeAllShowsFragment"
         android:name="com.kotlinexample.moviesapp.fragments.SeeAllShowsFragment"
         android:label="SeeAllShowsFragment" >
+        <action
+            android:id="@+id/action_seeAllShowsFragment_to_tvvFragment"
+            app:destination="@id/tvvFragment"/>
         <argument
             android:name="movieType"
             app:argType="string"/>
     </fragment>
+
+    <fragment
+        android:id="@+id/tvvFragment"
+        android:name="com.kotlinexample.moviesapp.fragments.tvvFragment"
+        android:label="tvvFragment" >
+        <argument
+            android:name="movie"
+            app:argType="com.kotlinexample.moviesapp.models.Tv" />
+    </fragment>
+
 
 </navigation>

@@ -33,5 +33,9 @@
     <string name="category1">ACTION</string>
     <string name="storyset">Storyset</string>
     <string name="watchNow">Watch Now</string>
+    <string name="change_theme">Change Theme</string>
+    <string name="logout">Logout</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="username">Username</string>
 
 </resources>

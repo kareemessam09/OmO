@@ -3,9 +3,11 @@ package com.kotlinexample.moviesapp.adapters
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.kotlinexample.moviesapp.databinding.MovieTrendItemBinding
+import com.kotlinexample.moviesapp.fragments.TvFragmentDirections
 import com.kotlinexample.moviesapp.models.Tv
 
 class TvAdapter (private val tvs:List<Tv>, val context: Context): RecyclerView.Adapter<TvViewHolder>() {
@@ -21,10 +23,10 @@ class TvAdapter (private val tvs:List<Tv>, val context: Context): RecyclerView.A
             .into(holder.tvPoster)
 
 
-//        holder.itemView.setOnClickListener {
-//            val action = TvFragmentDirections.actionTvFragmentToTvShowFragment(tvs[position])
-//            it.findNavController().navigate(action)
-//        }
+        holder.itemView.setOnClickListener {
+            val action = TvFragmentDirections.actionTvToTvv(tvs[position])
+            it.findNavController().navigate(action)
+        }
 
     }
 

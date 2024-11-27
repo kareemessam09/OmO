@@ -1,173 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".fragments.MeFragment">
-
-    <Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/purple"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:elevation="0dp"
-        android:title="@string/myAccount_t"
-        android:titleTextColor="@color/white" />
+    android:background="#000">
 
     <ImageView
-        android:id="@+id/user_photo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:id="@+id/back_arrow"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/baseline_circle_notifications_24"
         android:layout_marginTop="20dp"
-        android:background="@drawable/background_circle"
-        android:cropToPadding="true"
-        android:scaleType="fitXY"
-        android:src="@drawable/profile_ic" />
-
-    <TextView
-        android:id="@+id/user_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/username_t"
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        android:fontFamily="@font/savelemon"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_photo"
-        android:layout_marginTop="14dp" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/edit_profile"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        app:layout_constraintTop_toBottomOf="@id/user_name"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="40dp"
-        app:cardBackgroundColor="@color/purple"
-        app:cardCornerRadius="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:clickable="true"
-        android:focusable="true" >
+        android:padding="8dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:id="@+id/profile_image"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
             android:src="@drawable/profile_ic"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp" />
+            android:scaleType="centerCrop"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/circle_background" />
 
         <TextView
+            android:id="@+id/profile_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="70dp"
-            android:fontFamily="@font/monawriter"
-            android:text="@string/editProfile_t"
-            android:textColor="@color/black"
-            android:textSize="21sp"
-            android:textStyle="bold" />
-    </com.google.android.material.card.MaterialCardView>
+            android:text="@string/username"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#407BFE"
+            android:layout_gravity="center" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/sleepMode"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        app:layout_constraintTop_toBottomOf="@id/edit_profile"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="15dp"
-        app:cardBackgroundColor="@color/purple"
-        app:cardCornerRadius="8dp"
-        android:clickable="true"
-        android:focusable="true" >
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/notification_ic"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/edit_profile_button"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="70dp"
-            android:fontFamily="@font/monawriter"
-            android:text="@string/sleepMode_t"
-            android:textColor="@color/black"
-            android:textSize="21sp"
-            android:textStyle="bold" />
-    </com.google.android.material.card.MaterialCardView>
+            android:layout_gravity="center"
+            android:text="@string/edit_profile"
+            android:textSize="30sp"
+            android:textStyle="normal"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#6200EE"
+            android:textColor="#FFFFFF" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/theme"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        app:layout_constraintTop_toBottomOf="@id/sleepMode"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="15dp"
-        app:cardBackgroundColor="@color/purple"
-        app:cardCornerRadius="8dp"
-        android:clickable="true"
-        android:focusable="true" >
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/theme_ic"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/change_theme_button"
+            android:layout_width="300dp"
+            android:textSize="30sp"
+            android:textStyle="normal"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="70dp"
-            android:fontFamily="@font/monawriter"
-            android:text="@string/theme_t"
-            android:textColor="@color/black"
-            android:textSize="21sp"
-            android:textStyle="bold" />
-    </com.google.android.material.card.MaterialCardView>
+            android:layout_gravity="center"
+            android:text="@string/change_theme"
+            android:backgroundTint="#03A9F4"
+            android:textColor="#FFFFFF" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/logOut"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        app:layout_constraintTop_toBottomOf="@id/theme"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="15dp"
-        app:cardBackgroundColor="@color/purple"
-        app:cardCornerRadius="8dp"
-        android:clickable="true"
-        android:focusable="true" >
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/logout_ic"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/logout_button"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="70dp"
-            android:fontFamily="@font/monawriter"
-            android:text="@string/logOut_t"
-            android:textColor="@color/red"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </com.google.android.material.card.MaterialCardView>
+            android:layout_gravity="center"
+            android:textSize="30sp"
+            android:textStyle="normal"
+            android:text="@string/logout"
+            android:backgroundTint="#FF5722"
+            android:textColor="#FFFFFF" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</RelativeLayout>

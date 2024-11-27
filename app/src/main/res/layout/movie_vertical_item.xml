@@ -1,76 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="0dp"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="8dp"
     app:strokeWidth="0dp"
-    app:cardBackgroundColor="@color/white"
-    android:layout_margin="5dp">
+    app:cardBackgroundColor="@color/black">
 
-
+    <!-- ConstraintLayout for Card Content -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp">
+        android:layout_height="wrap_content"
+        android:padding="12dp">
 
+        <!-- Poster Image -->
         <ImageView
             android:id="@+id/poster_image"
-            android:layout_width="120dp"
-            android:layout_height="match_parent"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:scaleType="fitXY"
-            android:src="@drawable/back_ic"
+            android:layout_marginStart="-16dp"
+            android:elevation="12dp"
+            android:translationZ="8dp"
+            android:background="@drawable/circulalll"
+            android:src="@drawable/ic_app"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent" />
 
+        <!-- Title -->
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="name"
+            android:text="Movie Name"
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:textColor="#407BFE"
+            android:ellipsize="end"
+            android:maxLines="2"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/poster_image"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="25dp"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp" />
+
+        <!-- Rating Bar -->
         <RatingBar
             android:id="@+id/movie_rating"
-            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="?android:attr/ratingBarStyleIndicator"
-            app:layout_constraintStart_toEndOf="@id/poster_image"
-            app:layout_constraintTop_toBottomOf="@id/title"
             android:numStars="5"
             android:stepSize="0.5"
-            android:rating="3.5"
-            android:layout_marginStart="8dp"
+            android:rating="4.0"
+            android:layout_marginTop="8dp"
             android:progressTint="@android:color/holo_orange_light"
             android:secondaryProgressTint="@android:color/darker_gray"
-            android:backgroundTint="@android:color/darker_gray" />
+            android:backgroundTint="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintStart_toEndOf="@id/poster_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="12dp" />
 
+        <!-- Description -->
         <TextView
             android:id="@+id/release"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="description"
-            android:textSize="15sp"
-            android:textColor="@color/black"
-            android:textStyle="italic"
-            app:layout_constraintTop_toBottomOf="@id/movie_rating"
-            app:layout_constraintStart_toEndOf="@id/poster_image"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="5dp"
-            />
-
-
-
+            android:layout_marginTop="8dp"
+            android:text="19222"
+            android:textColor="#407BFE"
+            android:textSize="14sp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="@+id/movie_rating"
+            app:layout_constraintStart_toStartOf="@id/movie_rating"
+            app:layout_constraintTop_toBottomOf="@id/movie_rating" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </com.google.android.material.card.MaterialCardView>

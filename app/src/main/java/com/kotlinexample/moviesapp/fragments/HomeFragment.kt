@@ -67,16 +67,16 @@ class HomeFragment : Fragment() {
 
 
         binding.seeAll.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToSeeAllFragment("trended")
+            val action = HomeFragmentDirections.actionHomeFragmentToSeeAllFragment("Trended")
             requireView().findNavController().navigate(action)
         }
         binding.seeAll2.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToSeeAllFragment("highRated")
+            val action = HomeFragmentDirections.actionHomeFragmentToSeeAllFragment("HighRated")
             requireView().findNavController().navigate(action)
         }
 
         binding.seeAll3.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToSeeAllFragment("comingSoon")
+            val action = HomeFragmentDirections.actionHomeFragmentToSeeAllFragment("ComingSoon")
             requireView().findNavController().navigate(action)
         }
 

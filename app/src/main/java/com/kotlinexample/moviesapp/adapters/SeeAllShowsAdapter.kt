@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.kotlinexample.moviesapp.databinding.MovieVerticalItemBinding
 import com.kotlinexample.moviesapp.fragments.SeeAllFragmentDirections
+import com.kotlinexample.moviesapp.fragments.SeeAllShowsFragment
+import com.kotlinexample.moviesapp.fragments.SeeAllShowsFragmentDirections
 import com.kotlinexample.moviesapp.models.Movie
 import com.kotlinexample.moviesapp.models.Tv
 
@@ -29,10 +31,10 @@ class SeeAllShowsAdapter(val tvs: List<Tv>, val context: Context) : RecyclerView
             .into(holder.moviePoster)
 
 
-//        holder.itemView.setOnClickListener {
-//            val action = SeeAllFragmentDirections.actionSeeAllFragmentToMovieFragment(tvs[position])
-//            it.findNavController().navigate(action)
-//        }
+        holder.itemView.setOnClickListener {
+            val action =  SeeAllShowsFragmentDirections.actionSeeAllShowsFragmentToTvvFragment(tvs[position])
+            it.findNavController().navigate(action)
+        }
 
     }
 

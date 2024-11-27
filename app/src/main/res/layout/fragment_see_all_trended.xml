@@ -22,7 +22,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/white"
+        android:background="#2B68EE"
         app:layout_constraintTop_toTopOf="parent"
         android:orientation="horizontal">
 
@@ -30,7 +30,7 @@
             android:id="@+id/back"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/back_ic"
+            android:src="@drawable/back_cutom_blue"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
             />

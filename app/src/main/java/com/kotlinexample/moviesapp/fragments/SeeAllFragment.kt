@@ -35,9 +35,9 @@ class SeeAllFragment : Fragment() {
 
         lifecycleScope.launch {
            when (head) {
-               "trended" -> fillTrendRecycler()
-               "highRated" -> fillHighRatedRecycler()
-               "comingSoon" -> fillComingSoonRecycler()
+               "Trended" -> fillTrendRecycler()
+               "HighRated" -> fillHighRatedRecycler()
+               "ComingSoon" -> fillComingSoonRecycler()
            }
        }
 

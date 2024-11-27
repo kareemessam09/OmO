@@ -22,4 +22,4 @@ A Kotlin-based Android app that displays movie details and posters using the IMD
 ## Installation  
 1. Clone the repository:  
    ```bash  
-   git clone https://github.com/your-username/movie-app.git  
+   git clone https://github.com/kareemessam09/movie-app.git  

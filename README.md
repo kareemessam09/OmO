@@ -3,7 +3,7 @@
 A Kotlin-based Android app that displays movie details and posters using the IMDB API. The app leverages modern Android development tools and best practices for a smooth user experience.  
 
 ## Features  
-- **Movie Details and Posters**: Fetches data from the IMDB API.  
+- **Movie Details and Posters**: Fetches data from the TMDB API.  
 - **Smooth List Transitions**: Powered by RecyclerView with custom **CascadingItemDecoration**.  
 - **Authentication**: Supports Google Sign-In and Facebook login.  
 - **Architecture**: Implements the **MVVM** (Model-View-ViewModel) architecture for a clean and maintainable codebase.  

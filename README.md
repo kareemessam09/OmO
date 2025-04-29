@@ -1,6 +1,6 @@
 # OmO 🎬  
 
-A Kotlin-based Android app that displays movie details and posters using the IMDB API. The app leverages modern Android development tools and best practices for a smooth user experience.  
+A Kotlin-based Android app that displays movie details and posters using the TMDB API. The app leverages modern Android development tools and best practices for a smooth user experience.  
 
 ## Features  
 - **Movie Details and Posters**: Fetches data from the TMDB API.  

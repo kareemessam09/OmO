@@ -18,8 +18,3 @@ A Kotlin-based Android app that displays movie details and posters using the TMD
 ## Prerequisites  
 - Android device with at least **Android 5.0 (Lollipop)** or later.  
 - **Google Play Services** (for Google Sign-In, though the app will handle devices without it).  
-
-## Installation  
-1. Clone the repository:  
-   ```bash  
-   git clone https://github.com/kareemessam09/movie-app.git  
